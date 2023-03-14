@@ -1,0 +1,8 @@
+/* .gradient-bg {
+    background-image: linear-gradient(to right, rgb(198, 254, 254), rgb(157, 255, 255), rgb(118, 252, 252), cyan);
+  } */
+
+  .bg-info {
+    --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+  }
