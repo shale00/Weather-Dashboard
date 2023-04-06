@@ -22,91 +22,39 @@
     <div class="row mb-2">
         <div class="col-md-3">
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
-                <form class="card-body d-flex flex-column align-items-center">
+                <form id="searchForm" class="card-body d-flex flex-column align-items-center">
                     <div class="col-auto">
                         <h2 class="mb-0">Search for a City:</h2>
                         <input id="searchInput" type="text" class="form-control" placeholder="Enter a city...">
                     <div class="d-grid pt-2 pb-2">
-                        <button id="searchBtn" type="button" class="btn btn-info">Search</button>
+                        <button id="searchBtn" type="submit" class="btn btn-info">Search</button>
                 </div>
                      <!-- would not let me close form (or use div instead), had to close with div for layout (?) -->
                     <div style="height: 3px; border-radius: 10px; background-color: #EAEFF5"></div>
 
                     <div class="col-auto">
                         <div class="py-3">
-                          <ul class="list-group" id="cityHistory">
+                          <div class="list-group" id="cityHistory">
                             <!-- li to be removed after js function written -->
-                            <li>Ex. City</li>
-                            <li>Ex. City</li>
-                          </ul>
+                            <a href="#" class="list-group-item list-group-item-action">A link item</a>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="forecastData" class="col-md-9">
+        <div id="weatherData" class="col-md-9">
+            <div id="currentWeather" class="card flex-md-row mb-4 box-shadow h-md-250">
+                
+            </div>
             
-            <div class="flex-md-row mb-4 box-shadow h-md-250">
+            <div id="forecastWeather"class="flex-md-row mb-4 box-shadow h-md-250">
                 <div class="card-body row d-flex flex-column align-items-start">
-                    <h4 id="ctyName" class="mb-0">5-Day Forecast:</h4>
+                    <h4 class="mb-0">5-Day Forecast:</h4>
                     <div class="card-deck mb-5 text-center">
                         <div id="forecastContainer" class="container">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">Date</p>
-                                            <p class="card-text">Icon</p>
-                                            <p class="card-text">Temp</p>
-                                            <p class="card-text">Wind</p>
-                                            <p class="card-text">Humidity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">Date</p>
-                                            <p class="card-text">Icon</p>
-                                            <p class="card-text">Temp</p>
-                                            <p class="card-text">Wind</p>
-                                            <p class="card-text">Humidity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">Date</p>
-                                            <p class="card-text">Icon</p>
-                                            <p class="card-text">Temp</p>
-                                            <p class="card-text">Wind</p>
-                                            <p class="card-text">Humidity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">Date</p>
-                                            <p class="card-text">Icon</p>
-                                            <p class="card-text">Temp</p>
-                                            <p class="card-text">Wind</p>
-                                            <p class="card-text">Humidity</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p class="card-text">Date</p>
-                                            <p class="card-text">Icon</p>
-                                            <p class="card-text">Temp</p>
-                                            <p class="card-text">Wind</p>
-                                            <p class="card-text">Humidity</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
