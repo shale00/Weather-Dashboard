@@ -155,11 +155,11 @@ $("#searchBtn").click(function (event) {
             if (item.dt >= startDate && item.dt < endDate) {
               // Returns data for 12 o'clock (noon)
               if (item.dt_txt.slice(11, 13) === "12") {
-                var cardDeck = $("<div>").addClass(
-                  "card-deck mb-5 text-center"
-                );
-                var container = $("<div>").addClass("container");
-                var row = $("<div>").addClass("row");
+                // var cardDeck = $("<div>").addClass(
+                //   "card-deck mb-5 text-center"
+                // );
+                // var container = $("<div>").addClass("container");
+                // var row = $("<div>").addClass("row");
                 var colMd2 = $("<div>").addClass("col-md-2");
                 var card = $("<div>").addClass("card");
                 var cardBody = $("<div>").addClass("card-body");
@@ -187,10 +187,10 @@ $("#searchBtn").click(function (event) {
                 cardBody.append(date, weatherIcon, temp, wind, humidity);
                 card.append(cardBody);
                 colMd2.append(card);
-                row.append(colMd2);
-                container.append(row);
-                cardDeck.append(container);
-                forecastContainer.append(cardDeck);
+                // row.append(colMd2);
+                // container.append(row);
+                // cardDeck.append(container);
+                forecastContainer.append(colMd2);
               }
             }
           });
