@@ -10,6 +10,53 @@ var searchHistory = [];
 //Timezone plugin for day.js
 dayjs.extend(window.dayjs_plugin_timezone);
 
+
+// Init search history
+function init() {
+  var storedHistory = localStorage.getItem('search-history');
+  if (storedHistory) {
+    searchHistory = JSON.parse(storedHistory);
+  }
+  renderHistory();
+}
+
+//Search History Function
+function renderHistory() {
+  cityHistory.innerHTML = "";
+
+  //Show most recent history at top of list
+  searchHistory
+    .slice()
+    .reverse()
+    .forEach(function (response) {
+      var button = document.createElement("button");
+      button.setAttribute("type", "button");
+      button.setAttribute("aria-controls", "today forecast");
+      button.classList.add(
+        "history-btn",
+        "btn-history",
+        "list-group-item",
+        "list-group-item-action"
+      );
+      button.setAttribute("searchInput", response);
+      button.textContent = response;
+      cityHistory.append(button);
+    });
+}
+
+function appendToHistory(response) {
+  // If no history, return
+  if (searchHistory.indexOf(response) !== -1) {
+    return;
+  }
+  searchHistory.push(response);
+
+  localStorage.setItem('search-history', JSON.stringify(searchHistory));
+  renderHistory();
+}
+
+
+
 $("#searchBtn").click(function (event) {
   event.preventDefault();
   let city = $("#searchInput").val();
@@ -42,7 +89,6 @@ $("#searchBtn").click(function (event) {
         "&units=imperial&appid=" +
         APIKey;
 
-      console.log("click");
       if (!searchInput.val()) {
         console.log("No Search Input!");
         return;
@@ -53,6 +99,9 @@ $("#searchBtn").click(function (event) {
           return response.json();
         })
         .then(function (data) {
+          //add to history
+          appendToHistory(data.name);
+          
           let unixTimestamp = data.dt;
           let date = dayjs.unix(unixTimestamp);
           let formatDate = date.format("MM-DD-YYYY");
@@ -197,3 +246,5 @@ $("#searchBtn").click(function (event) {
         });
     });
 });
+
+init();
