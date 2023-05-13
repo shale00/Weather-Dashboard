@@ -19,6 +19,7 @@
 
   ## Usage
   Enter a city name into the input box to display the current weather and five day forecast data. Click on a city name link, from the list under the search button, to get the weather data for a previously searched city.
+  See the deployed application here: https://shale00.github.io/Weather-Dashboard/
 
   ![screenshot](Assets/img/weatherDashboar-screenshot.png)
 
