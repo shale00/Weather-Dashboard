@@ -22,7 +22,8 @@ function init() {
 
 //Search History Function
 function renderHistory() {
-  cityHistory.innerHTML = "";
+  //Clear history list
+  $("#cityHistory").empty();
 
   //Show most recent history at top of list
   searchHistory
@@ -55,6 +56,9 @@ function appendToHistory(response) {
   renderHistory();
 }
 
+$("body").on("click", "btn-history", function () {
+
+});
 
 
 $("#searchBtn").click(function (event) {
@@ -96,12 +100,14 @@ $("#searchBtn").click(function (event) {
 
       fetch(currentDayQuery)
         .then(function (response) {
+          //Clear Current Weather container
+          $("#currentWeather").empty();
           return response.json();
         })
         .then(function (data) {
           //add to history
           appendToHistory(data.name);
-          
+
           let unixTimestamp = data.dt;
           let date = dayjs.unix(unixTimestamp);
           let formatDate = date.format("MM-DD-YYYY");
