@@ -115,7 +115,7 @@ $("body").on("click", ".history-btn", function (event) {
 
           //Create current city weather info
           let cardBodyDiv = $("<div>")
-            .addClass("card-body d-flex flex-column align-items-start")
+            .addClass("card-body d-flex flex-column align-items-start container-bg")
             .appendTo($("#currentWeather"));
           let cityH3 = $("<h3>")
             .attr("id", "ctyName")
@@ -167,7 +167,7 @@ $("body").on("click", ".history-btn", function (event) {
             weather.weather[0].description || weather[0].main;
 
             var card = $("<div>").addClass("card");
-            var cardBody = $("<div>").addClass("card-body");
+            var cardBody = $("<div>").addClass("card-body col-md-3");
             var heading = $("<h2>")
               .addClass("h3 card-title")
               .text(city + " (" + date + ")");
@@ -203,9 +203,9 @@ $("body").on("click", ".history-btn", function (event) {
               if (item.dt >= startDate && item.dt < endDate) {
                 // Returns data for 12 o'clock (noon)
                 if (item.dt_txt.slice(11, 13) === "12") {
-                  var colMd2 = $("<div>").addClass("col-md-2");
+                  var colMd2 = $("<div>").addClass("col-md-3");
                   var card = $("<div>").addClass("card");
-                  var cardBody = $("<div>").addClass("card-body");
+                  var cardBody = $("<div>").addClass("card-body card-bg");
                   var date = $("<p>")
                     .addClass("card-text")
                     .text(dayjs(item.dt_txt).format("M/D/YYYY"));
@@ -299,7 +299,7 @@ $("#searchBtn").click(function (event) {
 
           //Create current city weather info
           let cardBodyDiv = $("<div>")
-            .addClass("card-body d-flex flex-column align-items-start")
+            .addClass("card-body d-flex flex-column align-items-start container-bg")
             .appendTo($("#currentWeather"));
           let cityH3 = $("<h3>")
             .attr("id", "ctyName")
@@ -350,7 +350,7 @@ $("#searchBtn").click(function (event) {
             weather.weather[0].description || weather[0].main;
 
           var card = $("<div>").addClass("card");
-          var cardBody = $("<div>").addClass("card-body");
+          var cardBody = $("<div>").addClass("card-body card-bg");
           var heading = $("<h2>")
             .addClass("h3 card-title")
             .text(city + " (" + date + ")");
@@ -391,9 +391,9 @@ $("#searchBtn").click(function (event) {
                 );
                 var container = $("<div>").addClass("container");
                 var row = $("<div>").addClass("row");
-                var colMd2 = $("<div>").addClass("col-md-2");
+                var colMd2 = $("<div>").addClass("col-md-3");
                 var card = $("<div>").addClass("card");
-                var cardBody = $("<div>").addClass("card-body");
+                var cardBody = $("<div>").addClass("card-body card-bg");
                 var date = $("<p>")
                   .addClass("card-text")
                   .text(dayjs(item.dt_txt).format("M/D/YYYY"));

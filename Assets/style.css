@@ -1,8 +1,28 @@
-/* .gradient-bg {
-    background-image: linear-gradient(to right, rgb(198, 254, 254), rgb(157, 255, 255), rgb(118, 252, 252), cyan);
-  } */
+.bg-info {
+  background-image: linear-gradient(to right top, #264bdf, #008eff, #00b9e4, #00d985, #a8eb12);
+}
 
-  .bg-info {
-    --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
-  }
+body {
+  background-color: #00b9e4;
+}
+.custom-bg {
+  background-color: linear-gradient(to right, #264bdf, #00b9e4, #00d985);
+}
+
+.container-bg {
+  background-color: #008eff;
+}
+
+.history-btn {
+  background-color: #00d985;
+  text-align: center;
+}
+
+.history-btn:hover {
+  background-color: lightslategray;
+}
+
+.card-bg {
+  background-color: lightgray;
+  max-height: fit-content;
+}
